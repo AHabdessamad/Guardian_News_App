@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graphe"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.theguardian_news_app.fragments.articleFragment"
+        android:label="articleFragment">
+    <argument
+        android:name="article"
+        app:argType="com.example.theguardian_news_app.models.Article"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/headlinesFragment"
+        android:name="com.example.theguardian_news_app.fragments.headlinesFragment"
+        android:label="headlinesFragment" >
+        <action
+            android:id="@+id/action_headlinesFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.theguardian_news_app.fragments.searchFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.theguardian_news_app.fragments.savedFragment"
+        android:label="savedFragment" >
+        <action
+            android:id="@+id/action_savedFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+</navigation>
