@@ -1,15 +1,14 @@
-package com.example.theguardian_news_app.ui
+package com.example.theguardian_news_app.View
 
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.theguardian_news_app.R
 import com.example.theguardian_news_app.databinding.ActivityNewsBinding
-import com.example.theguardian_news_app.fragments.headlinesFragment
-import com.example.theguardian_news_app.fragments.profileFragment
-import com.example.theguardian_news_app.fragments.savedFragment
-import com.example.theguardian_news_app.fragments.searchFragment
+import com.example.theguardian_news_app.View.fragments.headlinesFragment
+import com.example.theguardian_news_app.View.fragments.profileFragment
+import com.example.theguardian_news_app.View.fragments.savedFragment
+import com.example.theguardian_news_app.View.fragments.searchFragment
 
 class newsActivity : AppCompatActivity() {
     private lateinit var binding : ActivityNewsBinding

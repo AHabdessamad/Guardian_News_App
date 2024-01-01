@@ -1,4 +1,4 @@
-package com.example.theguardian_news_app.fragments
+package com.example.theguardian_news_app.View.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.theguardian_news_app.R
 
 
-class profileFragment : Fragment() {
+class savedFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,8 @@ class profileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        return inflater.inflate(R.layout.fragment_saved, container, false)
     }
+
 
 }

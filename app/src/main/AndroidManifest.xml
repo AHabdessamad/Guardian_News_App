@@ -16,7 +16,7 @@
         android:theme="@style/Theme.TheGuardian_News_App"
         tools:targetApi="31">
         <activity
-            android:name=".ui.newsActivity"
+            android:name=".View.newsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

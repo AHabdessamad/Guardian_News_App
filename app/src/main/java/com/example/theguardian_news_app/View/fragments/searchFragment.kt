@@ -1,4 +1,4 @@
-package com.example.theguardian_news_app.fragments
+package com.example.theguardian_news_app.View.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
