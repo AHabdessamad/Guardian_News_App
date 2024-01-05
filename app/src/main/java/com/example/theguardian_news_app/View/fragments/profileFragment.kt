@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.theguardian_news_app.R
 
 
-class profileFragment : Fragment() {
+class profileFragment : Fragment(R.layout.fragment_profile) {
 
 
     override fun onCreateView(

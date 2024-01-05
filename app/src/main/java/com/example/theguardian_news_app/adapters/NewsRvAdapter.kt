@@ -19,12 +19,18 @@ import java.util.concurrent.CompletableFuture.AsynchronousCompletionTask
 
 class NewsRvAdapter: RecyclerView.Adapter<NewsRvAdapter.ArticleViewHolder>() {
 
-    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-    lateinit var articleImage: ImageView
-    lateinit var articleTitle: TextView
-    lateinit var articleDateTime: TextView
-    lateinit var articleDescription: TextView
-    lateinit var articleSource: TextView
+    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //    lateinit var articleImage:
+//    lateinit var articleTitle: TextView
+//    lateinit var articleDateTime: TextView
+//    lateinit var articleDescription: TextView
+//    lateinit var articleSource: TextView
+        val articleImage : ImageView = itemView.findViewById(R.id.articleImage)
+        val articleTitle : TextView = itemView.findViewById(R.id.articleTitle)
+        val articleSource : TextView = itemView.findViewById(R.id.articleSource)
+        val articleDateTime :  TextView = itemView.findViewById(R.id.articleDateTime)
+        val articleDescription : TextView = itemView.findViewById(R.id.articleDescription)
+    }
 
     private val differCallback = object : DiffUtil.ItemCallback<Article>(){
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -47,35 +53,41 @@ class NewsRvAdapter: RecyclerView.Adapter<NewsRvAdapter.ArticleViewHolder>() {
     override fun onBindViewHolder(holder: NewsRvAdapter.ArticleViewHolder, position: Int) {
         val article = diff.currentList[position]
 
-        articleImage = holder.itemView.findViewById(R.id.articleImage)
-        articleTitle = holder.itemView.findViewById(R.id.articleTitle)
-        articleSource = holder.itemView.findViewById(R.id.articleSource)
-        articleDateTime = holder.itemView.findViewById(R.id.articleDateTime)
-        articleDescription = holder.itemView.findViewById(R.id.articleDescription)
+        holder.itemView.apply {
+            Glide.with(this)
+                .load(article.urlToImage)
+                .placeholder(R.drawable.loading__1_)
+                .error(R.drawable.ic_launcher_background)
+                .into(holder.articleImage)
 
-        holder.itemView.apply{
-            Glide.with(this).load(article.urlToImage).into(articleImage)
-            articleSource.text = article.source.name
-            articleTitle.text = article.title
-            articleDescription.text = article.description
-            articleDateTime.text = article.publishedAt
+            holder.articleSource.text = article.source?.name ?: ""
+            holder.articleTitle.text = article.title
+            holder.articleDescription.text = article.description
+            holder.articleDateTime.text = article.publishedAt
+
 
             setOnClickListener {
-                onItemClickListener?.let{
-                    it(article)
+                article?.let {
+                    onItemClickListener?.invoke(it)
                 }
             }
         }
 
-        //for external classes
-        fun onItemClickListener(listener: (Article) -> Unit){
-            onItemClickListener = listener
-        }
+
+    }
+
+    //for external classes
+    fun setOnItemClickListener(listener: (Article) -> Unit){
+        onItemClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder{
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.news_item, parent,  false)
         return ArticleViewHolder(layout)
     }
+
+
+
+
 
 }

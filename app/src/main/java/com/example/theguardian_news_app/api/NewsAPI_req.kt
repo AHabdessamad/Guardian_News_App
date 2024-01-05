@@ -12,7 +12,7 @@ interface NewsAPI_req {
     //function can be paused and resumed in async way
     suspend fun getHeadlines(
         @Query("country")
-        countryCode : String = "ma",
+        countryCode : String = "us",
         @Query("page")
         pageNbr : Int = 1,
         @Query("apiKey")

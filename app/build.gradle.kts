@@ -40,6 +40,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -59,6 +60,7 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.6.0")
     // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     // Coroutine Lifecycle Scopes
@@ -71,7 +73,9 @@ dependencies {
     // Navigation Components
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.5")
+
     // Glide use for image processing (fetching and loading imgs)
+
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp ("com.github.bumptech.glide:compiler:4.12.0")
 }
