@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1081107869421",
+    "project_id": "newsapp-a4589",
+    "storage_bucket": "newsapp-a4589.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081107869421:android:1e25a8a775f13b760926e4",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ4HmIr7QOb5bPqjq7gQgCtt946scZMIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081107869421:android:376929fe79c2914e0926e4",
+        "android_client_info": {
+          "package_name": "com.example.theguardian_news_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ4HmIr7QOb5bPqjq7gQgCtt946scZMIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
